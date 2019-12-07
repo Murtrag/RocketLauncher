@@ -41,12 +41,12 @@ class App extends Component {
 			<>
 			<Navigation />
                         <Switch>
-				<Provider store={store}>
 					<Route exact path='/' component={Main} />
+				<Provider store={store}>
 					<Route path='/platform' component={Platform} />
+				</Provider>	
 					<Route path='/about' component={About} />
 					<Route component={NotFound} /> 
-				</Provider>	
                         </Switch>
 			</>
                 </Router>
