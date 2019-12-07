@@ -30,18 +30,19 @@ const LAUNCHED = "launched";
 
 const launchRocket = (id) => (dispatch) => {
 	[4,3,2,1].forEach((el)=>{
-		setTimeout(()={
+		setTimeout(()=>{
 			dispatch({
 				type: DEC_COUNT,
 				payload: id
-			}
-			)
+			})
 		}, 1000);
 	})
-	dispatch({
-		type: LAUNCHED,
-		payload: id
-	})
+	setTimeout(()=>{
+		dispatch({
+			type: LAUNCHED,
+			payload: id
+		})
+	},5000)
 
 };
 
@@ -51,4 +52,4 @@ const launchRocket = (id) => (dispatch) => {
 
 
 
-export { add, remove, ADD_ROCKET, REMOVE_ROCKET, launchRocket };
+export { add, remove, ADD_ROCKET, REMOVE_ROCKET, launchRocket, DEC_COUNT, LAUNCHED};

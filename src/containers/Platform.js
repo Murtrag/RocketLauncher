@@ -11,8 +11,8 @@ import {add, remove, launchRocket } from "../redux/actions";
 const mapDispatchToProps = (dispatch)=>{
 	return {
 		addRocket: () => dispatch(add()),
-		removeRocket: () => dispatch(remove())
-		launchRocket: () => dispatch(launchRocket())
+		removeRocket: () => dispatch(remove()),
+		launchRocket: (id) => {console.log(id); dispatch(launchRocket(id))}
 	}
 }
 

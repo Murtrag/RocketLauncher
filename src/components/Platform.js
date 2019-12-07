@@ -1,7 +1,7 @@
 import React from "react";
 import Rocket from "./Rocket";
 
-const Platform = ({addRocket, removeRocket, rockets}) => {
+const Platform = ({addRocket, removeRocket, rockets, launchRocket}) => {
   return <div className="platform">
     <div className="platform__buttons">
 	<button onClick={addRocket} >Dodaj rakietę</button>
@@ -9,8 +9,7 @@ const Platform = ({addRocket, removeRocket, rockets}) => {
     </div>
     <div className="platform__rockets">
 		{rockets.map((rocket, i)=>{
-			console.log(rocket.isLaunched);
-			return <Rocket key={i} launched={rocket.isLaunched} counter={rockets.counter} />
+			return <Rocket id={i} launch={launchRocket} key={i} launched={rocket.isLaunched} counter={rocket.counter} />
 		})}
     </div>
   </div>

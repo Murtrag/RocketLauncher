@@ -8,16 +8,12 @@ import {
 } from 'react-router-dom';
 import NotFound from "./NotFound"
 import Platform from "../containers/Platform"
+import Main from "./Main"
 import About from "./About";
 import { Provider } from "react-redux";
 import store from "../redux/store";
 
 
-// const App = () => (
-//   <div>
-//     <h1>Konfiguracja działa!</h1>
-//   </div>
-// );
 const Test = ()=><b>test</b>
 
 const Navigation = () => {
@@ -42,15 +38,17 @@ const Navigation = () => {
 class App extends Component {
         render() {
         return <Router>
+			<>
 			<Navigation />
                         <Switch>
 				<Provider store={store}>
-                                <Route exact path='/' component={Test} />
-                                <Route path='/platform' component={Platform} />
-                                <Route path='/about' component={About} />
-                                <Route component={NotFound} /> 
+					<Route exact path='/' component={Main} />
+					<Route path='/platform' component={Platform} />
+					<Route path='/about' component={About} />
+					<Route component={NotFound} /> 
 				</Provider>	
                         </Switch>
+			</>
                 </Router>
         }
 }
